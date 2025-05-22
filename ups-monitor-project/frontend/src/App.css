@@ -1,0 +1,217 @@
+/* src/App.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.app-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #222b38;
+  color: #fff;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar h2 {
+  margin: 0 0 20px 12px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.sidebar nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  user-select: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.menu-item .icon {
+  margin-right: 12px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item:hover {
+  background-color: #2e3a54;
+}
+
+.menu-item.active {
+  background-color: #4a90e2;
+  color: white;
+  box-shadow: 0 0 8px #4a90e2aa;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 32px 48px;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: inset 0 0 10px #ddd;
+  border-radius: 0 8px 8px 0;
+}
+
+.content h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: #222b38;
+}
+
+.battery-icon {
+  font-size: 1.8rem;
+  vertical-align: middle;
+}
+
+.alarm-icon,
+.ok-icon {
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+.alarm-icon {
+  margin-left: 10px;
+  animation: pulse-red 1.5s infinite;
+}
+
+.ok-icon {
+  margin-left: 10px;
+  color: green;
+}
+
+@keyframes pulse-red {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.alarm-message {
+  background-color: #ffebee;
+  border: 1.5px solid #e53935;
+  color: #b71c1c;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 0 12px #f44336aa;
+}
+
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background-color: #f9fafc;
+  border-radius: 6px;
+  box-shadow: inset 0 0 4px #ddd;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+}
+
+.stat-row:hover {
+  background-color: #e3e9f5;
+}
+
+.stat-key {
+  font-weight: 600;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #222b38;
+}
+
+.app-container.loading,
+.app-container.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #555;
+}
+
+.app-container.error {
+  color: #b71c1c;
+}
+
+.commands-panel {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.command-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.command-controls select,
+.command-controls button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.self-test button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.command-response {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+}
